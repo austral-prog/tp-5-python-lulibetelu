@@ -26,10 +26,10 @@ class Book:
         return self.__checkout_num
 
     # Setters
-    def set_available(self, available: bool):
+    def set_available(self, available: bool) -> None:
         self.__available = available
 
-    def increment_checkout_num(self):
+    def increment_checkout_num(self) -> None:
         self.__checkout_num += 1
 
     # Utils

@@ -23,7 +23,7 @@ class Library:
         return self.__checked_in_books
 
     # 1.1 Add Book
-    def add_book(self, isbn : str, title: str, author: str):
+    def add_book(self, isbn : str, title: str, author: str) -> None:
         new_book: Book = Book(isbn, title, author)
         for book in self.__books:
             if new_book.__eq__(book):
@@ -31,7 +31,7 @@ class Library:
         self.__books.append(new_book)
 
     # 1.2 List All Books
-    def list_all_books(self):
+    def list_all_books(self) -> None:
         for book in self.__books:
             print(book.__str__())
 
@@ -71,6 +71,6 @@ class Library:
 
 
     # Utils
-    def add_user(self, dni: int, name: str):
+    def add_user(self, dni: int, name: str) -> None:
         new_user = User(dni, name)
         self.__users.append(new_user)

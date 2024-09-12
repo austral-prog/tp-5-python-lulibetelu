@@ -19,8 +19,8 @@ class User:
         return self.__number_of_checkins
 
     # Setters
-    def increment_checkouts(self):
+    def increment_checkouts(self) -> None:
         self.__number_of_checkouts += 1
 
-    def increment_checkins(self):
+    def increment_checkins(self) -> None:
         self.__number_of_checkins += 1
