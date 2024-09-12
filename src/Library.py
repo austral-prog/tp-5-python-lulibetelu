@@ -3,7 +3,7 @@ from src.User import User
 
 
 class Library:
-    def __init__(self):
+    def __init__(self) -> None:
         self.__books = []
         self.__users = []
         self.__checked_out_books = []
@@ -41,7 +41,7 @@ class Library:
             if book.get_isbn() == isbn:
                 for user in self.__users:
                     if user.get_dni() == dni:
-                        if book.is_available() == True:
+                        if book.is_available():
                             book.set_available(False)
                             self.__checked_out_books.append([isbn, dni, due_date])
                             book.increment_checkout_num()

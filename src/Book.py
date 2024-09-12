@@ -2,7 +2,7 @@
 
 
 class Book:
-    def __init__(self, isbn: str, title: str, author: str, available=True, checkout_num=0):
+    def __init__(self, isbn: str, title: str, author: str, available: bool = True, checkout_num: int = 0) -> None:
         self.__isbn = isbn
         self.__title = title
         self.__author = author
