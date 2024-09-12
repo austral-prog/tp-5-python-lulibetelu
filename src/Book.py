@@ -10,19 +10,19 @@ class Book:
         self.__checkout_num: int = checkout_num
 
     # Getters
-    def get_isbn(self) -> str:
+    def get_isbn(self):
         return self.__isbn
 
-    def get_title(self) -> str:
+    def get_title(self):
         return self.__title
 
-    def get_author(self) -> str:
+    def get_author(self):
         return self.__author
 
-    def is_available(self) -> bool:
+    def is_available(self):
         return self.__available
 
-    def get_checkout_num(self) -> int:
+    def get_checkout_num(self):
         return self.__checkout_num
 
     # Setters

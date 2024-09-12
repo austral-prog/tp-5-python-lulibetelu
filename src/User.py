@@ -6,16 +6,16 @@ class User:
         self.__number_of_checkins: int = number_of_checkins
 
     # Getters
-    def get_dni(self) -> int:
+    def get_dni(self):
         return self.__dni
 
-    def get_name(self) -> str:
+    def get_name(self):
         return self.__name
 
-    def get_number_of_checkouts(self) -> int:
+    def get_number_of_checkouts(self):
         return self.__number_of_checkouts
 
-    def get_number_of_checkins(self) -> int:
+    def get_number_of_checkins(self):
         return self.__number_of_checkins
 
     # Setters
