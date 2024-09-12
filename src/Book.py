@@ -26,15 +26,20 @@ class Book:
         return self.__checkout_num
 
     # Setters
-    def set_available(self, available):
-        pass
+    def set_available(self, available: bool):
+        self.__available = available
 
     def increment_checkout_num(self):
-        pass
+        self.__checkout_num += 1
 
     # Utils
     def __str__(self) -> str:
-        pass
+        return f"ISBN: {self.__isbn}, Title: {self.__title}, Author: {self.__author}"
 
-    def __eq__(self, other):
-        pass
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Book): #checks if other's class is 'Book' or not
+            return False
+        return other.get_isbn() == self.__isbn #checks if other's isbn is already in the library
+
+
