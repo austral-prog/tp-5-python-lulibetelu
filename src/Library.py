@@ -1,13 +1,15 @@
 from src.Book import Book
 from src.User import User
+from typing import List
+from typing import Tuple
 
 
 class Library:
     def __init__(self) -> None:
-        self.__books: list[str] = []
-        self.__users: list[str] = []
-        self.__checked_out_books: list[str] = []
-        self.__checked_in_books: list[str] = []
+        self.__books: list[Book] = []
+        self.__users: list[User] = []
+        self.__checked_out_books: list[Tuple[str, int, str]] = []
+        self.__checked_in_books: list[Tuple[str, int, str]] = []
 
     # Getters
     def get_books(self) -> list:
@@ -43,7 +45,7 @@ class Library:
                     if user.get_dni() == dni:
                         if book.is_available():
                             book.set_available(False)
-                            self.__checked_out_books.append([isbn, dni, due_date])
+                            self.__checked_out_books.append((isbn, dni, due_date))
                             book.increment_checkout_num()
                             user.increment_checkouts()
                             return f"User {dni} checked out book {isbn}"
@@ -59,7 +61,7 @@ class Library:
                     if user.get_dni() == dni:
                         if not book.is_available():
                             book.set_available(True)
-                            self.__checked_in_books.append([isbn, dni, returned_date])
+                            self.__checked_in_books.append((isbn, dni, returned_date))
                             for entry in self.__checked_out_books:
                                 if entry[0] == isbn and entry[1] == dni:
                                     self.__checked_out_books.remove(entry)
@@ -72,5 +74,5 @@ class Library:
 
     # Utils
     def add_user(self, dni: int, name: str) -> None:
-        new_user = User(dni, name)
+        new_user: User = User(dni, name)
         self.__users.append(new_user)
