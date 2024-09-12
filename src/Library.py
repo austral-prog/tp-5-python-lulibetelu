@@ -10,21 +10,21 @@ class Library:
         self.__checked_in_books = []
 
     # Getters
-    def get_books(self):
+    def get_books(self) -> list:
         return self.__books
 
-    def get_users(self):
+    def get_users(self) -> list:
         return self.__users
 
-    def get_checked_out_books(self):
+    def get_checked_out_books(self) -> list:
         return self.__checked_out_books
 
-    def get_checked_in_books(self):
+    def get_checked_in_books(self) -> list:
         return self.__checked_in_books
 
     # 1.1 Add Book
     def add_book(self, isbn : str, title: str, author: str):
-        new_book = Book(isbn, title, author)
+        new_book: Book = Book(isbn, title, author)
         for book in self.__books:
             if new_book.__eq__(book):
                 pass
@@ -36,7 +36,7 @@ class Library:
             print(book.__str__())
 
     # 2.1 Check out book
-    def check_out_book(self, isbn: str, dni: int, due_date: str ):
+    def check_out_book(self, isbn: str, dni: int, due_date: str ) -> str:
         for book in self.__books:
             if book.get_isbn() == isbn:
                 for user in self.__users:
@@ -52,7 +52,7 @@ class Library:
         return f"Unable to find the data for the values: ISBN {isbn} and DNI: {dni}"
 
     # 2.2 Check in book
-    def check_in_book(self, isbn: str, dni: int, returned_date: str):
+    def check_in_book(self, isbn: str, dni: int, returned_date: str) -> str:
         for book in self.__books:
             if book.get_isbn() == isbn:
                 for user in self.__users:
@@ -71,6 +71,6 @@ class Library:
 
 
     # Utils
-    def add_user(self, dni, name):
+    def add_user(self, dni: int, name: str):
         new_user = User(dni, name)
         self.__users.append(new_user)
