@@ -3,11 +3,11 @@
 
 class Book:
     def __init__(self, isbn: str, title: str, author: str, available: bool = True, checkout_num: int = 0) -> None:
-        self.__isbn = isbn
-        self.__title = title
-        self.__author = author
-        self.__available = available
-        self.__checkout_num = checkout_num
+        self.__isbn: str = isbn
+        self.__title: str = title
+        self.__author: str = author
+        self.__available: bool = available
+        self.__checkout_num: int = checkout_num
 
     # Getters
     def get_isbn(self) -> str:

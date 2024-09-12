@@ -1,9 +1,9 @@
 class User:
     def __init__(self, dni: int, name: str, number_of_checkouts: int = 0, number_of_checkins: int = 0) -> None:
-        self.__dni = dni
-        self.__name = name
-        self.__number_of_checkouts = number_of_checkouts
-        self.__number_of_checkins = number_of_checkins
+        self.__dni: int = dni
+        self.__name: str = name
+        self.__number_of_checkouts: int = number_of_checkouts
+        self.__number_of_checkins: int = number_of_checkins
 
     # Getters
     def get_dni(self) -> int:
